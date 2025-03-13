@@ -1,0 +1,813 @@
+[
+    {
+      "description": "A login button with blue background and white text",
+      "output": {
+        "html_css": "<button id=\"loginBtn\" style=\"background-color: blue; color: white; padding: 10px 20px; border: none; border-radius: 5px;\">Log In</button>",
+        "javascript_suggestions": [
+          { "function_name": "submitLogin", "code": "function submitLogin() { document.getElementById('loginBtn').addEventListener('click', () => console.log('Login submitted')); }", "description": "Logs login attempt to console" },
+          { "function_name": "toggleLoading", "code": "function toggleLoading() { document.getElementById('loginBtn').innerText = 'Loading...'; }", "description": "Changes button text to Loading" }
+        ]
+      }
+    },
+    {
+      "description": "A text input field for username on login page",
+      "output": {
+        "html_css": "<input id=\"username\" type=\"text\" style=\"padding: 8px; border: 2px solid gray; border-radius: 4px; width: 200px;\" placeholder=\"Enter username\">",
+        "javascript_suggestions": [
+          { "function_name": "validateUsername", "code": "function validateUsername() { const val = document.getElementById('username').value; if(val.length < 3) alert('Username too short'); }", "description": "Validates username length" },
+          { "function_name": "clearInput", "code": "function clearInput() { document.getElementById('username').value = ''; }", "description": "Clears the input field" }
+        ]
+      }
+    },
+    {
+      "description": "A password field with a subtle shadow",
+      "output": {
+        "html_css": "<input id=\"password\" type=\"password\" style=\"padding: 8px; border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); width: 200px;\" placeholder=\"Password\">",
+        "javascript_suggestions": [
+          { "function_name": "toggleVisibility", "code": "function toggleVisibility() { const pwd = document.getElementById('password'); pwd.type = pwd.type === 'password' ? 'text' : 'password'; }", "description": "Toggles password visibility" },
+          { "function_name": "checkStrength", "code": "function checkStrength() { const pwd = document.getElementById('password').value; if(pwd.length < 8) alert('Password too weak'); }", "description": "Checks password strength" }
+        ]
+      }
+    },
+    {
+      "description": "A payment submit button with green background",
+      "output": {
+        "html_css": "<button id=\"payBtn\" style=\"background-color: #28a745; color: white; padding: 12px 25px; border: none; border-radius: 6px;\">Pay Now</button>",
+        "javascript_suggestions": [
+          { "function_name": "processPayment", "code": "function processPayment() { document.getElementById('payBtn').addEventListener('click', () => console.log('Payment processed')); }", "description": "Logs payment processing" },
+          { "function_name": "disablePay", "code": "function disablePay() { document.getElementById('payBtn').disabled = true; }", "description": "Disables payment button" }
+        ]
+      }
+    },
+    {
+      "description": "A credit card input field for payment page",
+      "output": {
+        "html_css": "<input id=\"cardNumber\" type=\"text\" style=\"padding: 10px; border: 2px dashed #007bff; width: 250px;\" placeholder=\"Card Number\">",
+        "javascript_suggestions": [
+          { "function_name": "formatCard", "code": "function formatCard() { const card = document.getElementById('cardNumber'); card.value = card.value.replace(/\\D/g, '').replace(/(.{4})/g, '$1 '); }", "description": "Formats card number with spaces" },
+          { "function_name": "validateCard", "code": "function validateCard() { const card = document.getElementById('cardNumber').value; if(card.length < 19) alert('Invalid card'); }", "description": "Validates card length" }
+        ]
+      }
+    },
+    {
+      "description": "A home page welcome header with bold text",
+      "output": {
+        "html_css": "<h1 id=\"welcome\" style=\"font-size: 36px; font-weight: bold; color: #333; text-align: center;\">Welcome Home</h1>",
+        "javascript_suggestions": [
+          { "function_name": "changeText", "code": "function changeText() { document.getElementById('welcome').innerText = 'Hello User!'; }", "description": "Changes welcome message" },
+          { "function_name": "animateHeader", "code": "function animateHeader() { document.getElementById('welcome').style.transition = 'color 1s'; document.getElementById('welcome').style.color = 'blue'; }", "description": "Animates text color" }
+        ]
+      }
+    },
+    {
+      "description": "A navigation link with hover effect for home page",
+      "output": {
+        "html_css": "<a id=\"navLink\" href=\"#\" style=\"color: #007bff; text-decoration: none; padding: 5px 10px;\">Home</a><style>#navLink:hover { background-color: #f0f0f0; }</style>",
+        "javascript_suggestions": [
+          { "function_name": "logClick", "code": "function logClick() { document.getElementById('navLink').addEventListener('click', (e) => { e.preventDefault(); console.log('Nav clicked'); }); }", "description": "Logs navigation click" },
+          { "function_name": "changeLink", "code": "function changeLink() { document.getElementById('navLink').href = '/new-page'; }", "description": "Changes link destination" }
+        ]
+      }
+    },
+    {
+      "description": "A checkbox for terms agreement on payment page",
+      "output": {
+        "html_css": "<input id=\"terms\" type=\"checkbox\" style=\"margin-right: 10px;\"><label for=\"terms\">I agree to terms</label>",
+        "javascript_suggestions": [
+          { "function_name": "checkAgreement", "code": "function checkAgreement() { const terms = document.getElementById('terms'); if(!terms.checked) alert('Please agree to terms'); }", "description": "Checks if terms are agreed" },
+          { "function_name": "toggleCheck", "code": "function toggleCheck() { document.getElementById('terms').checked = !document.getElementById('terms').checked; }", "description": "Toggles checkbox state" }
+        ]
+      }
+    },
+    {
+      "description": "A logout link with red underline",
+      "output": {
+        "html_css": "<a id=\"logout\" href=\"#\" style=\"color: red; text-decoration: underline;\">Log Out</a>",
+        "javascript_suggestions": [
+          { "function_name": "confirmLogout", "code": "function confirmLogout() { document.getElementById('logout').addEventListener('click', (e) => { e.preventDefault(); if(confirm('Log out?')) console.log('Logged out'); }); }", "description": "Confirms logout action" },
+          { "function_name": "hideLogout", "code": "function hideLogout() { document.getElementById('logout').style.display = 'none'; }", "description": "Hides logout link" }
+        ]
+      }
+    },
+    {
+      "description": "A promotional banner with gradient background",
+      "output": {
+        "html_css": "<div id=\"promo\" style=\"background: linear-gradient(to right, #ff416c, #ff4b2b); color: white; padding: 20px; text-align: center;\">Special Offer!</div>",
+        "javascript_suggestions": [
+          { "function_name": "closePromo", "code": "function closePromo() { document.getElementById('promo').style.display = 'none'; }", "description": "Hides the promo banner" },
+          { "function_name": "changePromoText", "code": "function changePromoText() { document.getElementById('promo').innerText = 'Limited Time Deal!'; }", "description": "Updates promo text" }
+        ]
+      }
+    },
+
+    
+        {
+          "description": "A 'Add to Cart' button for e-commerce product page",
+          "output": {
+            "html_css": "<button id=\"addToCart\" style=\"background-color: #ff6200; color: white; padding: 10px 15px; border: none; border-radius: 3px; cursor: pointer;\">Add to Cart</button>",
+            "javascript_suggestions": [
+              { "function_name": "addItem", "code": "function addItem() { document.getElementById('addToCart').addEventListener('click', () => console.log('Item added to cart')); }", "description": "Logs item addition to cart" },
+              { "function_name": "updateButton", "code": "function updateButton() { document.getElementById('addToCart').innerText = 'Added!'; document.getElementById('addToCart').disabled = true; }", "description": "Updates button text and disables it" }
+            ]
+          }
+        },
+        {
+          "description": "A product search bar for e-commerce home page",
+          "output": {
+            "html_css": "<input id=\"searchBar\" type=\"text\" style=\"padding: 10px; border: 1px solid #ddd; border-radius: 20px; width: 300px;\" placeholder=\"Search products...\">",
+            "javascript_suggestions": [
+              { "function_name": "searchProducts", "code": "function searchProducts() { const query = document.getElementById('searchBar').value; console.log('Searching: ' + query); }", "description": "Logs search query" },
+              { "function_name": "clearSearch", "code": "function clearSearch() { document.getElementById('searchBar').value = ''; }", "description": "Clears the search input" }
+            ]
+          }
+        },
+        {
+          "description": "A blog post title with hover effect",
+          "output": {
+            "html_css": "<h2 id=\"blogTitle\" style=\"font-size: 24px; color: #2c3e50; margin: 10px 0;\">Latest News</h2><style>#blogTitle:hover { color: #3498db; }</style>",
+            "javascript_suggestions": [
+              { "function_name": "highlightTitle", "code": "function highlightTitle() { document.getElementById('blogTitle').style.backgroundColor = '#f1f1f1'; }", "description": "Highlights title on interaction" },
+              { "function_name": "logView", "code": "function logView() { document.getElementById('blogTitle').addEventListener('click', () => console.log('Post viewed')); }", "description": "Logs post view" }
+            ]
+          }
+        },
+        {
+          "description": "A comment submission button for blog page",
+          "output": {
+            "html_css": "<button id=\"commentBtn\" style=\"background-color: #3498db; color: white; padding: 8px 16px; border: none;\">Submit Comment</button>",
+            "javascript_suggestions": [
+              { "function_name": "submitComment", "code": "function submitComment() { document.getElementById('commentBtn').addEventListener('click', () => console.log('Comment submitted')); }", "description": "Logs comment submission" },
+              { "function_name": "disableComment", "code": "function disableComment() { document.getElementById('commentBtn').disabled = true; document.getElementById('commentBtn').innerText = 'Submitting...'; }", "description": "Disables button during submission" }
+            ]
+          }
+        },
+        {
+          "description": "A blog subscription email input",
+          "output": {
+            "html_css": "<input id=\"subscribeEmail\" type=\"email\" style=\"padding: 10px; border: 2px solid #ecf0f1; width: 250px;\" placeholder=\"Enter your email\">",
+            "javascript_suggestions": [
+              { "function_name": "validateEmail", "code": "function validateEmail() { const email = document.getElementById('subscribeEmail').value; if(!email.includes('@')) alert('Invalid email'); }", "description": "Validates email format" },
+              { "function_name": "subscribe", "code": "function subscribe() { const email = document.getElementById('subscribeEmail').value; console.log('Subscribed: ' + email); }", "description": "Logs subscription" }
+            ]
+          }
+        },
+        {
+          "description": "An ERP dashboard logout button",
+          "output": {
+            "html_css": "<button id=\"erpLogout\" style=\"background-color: #e74c3c; color: white; padding: 10px 20px; border: none; border-radius: 5px;\">Logout</button>",
+            "javascript_suggestions": [
+              { "function_name": "confirmLogout", "code": "function confirmLogout() { document.getElementById('erpLogout').addEventListener('click', () => { if(confirm('Exit ERP?')) console.log('Logged out')); }); }", "description": "Confirms ERP logout" },
+              { "function_name": "hideButton", "code": "function hideButton() { document.getElementById('erpLogout').style.display = 'none'; }", "description": "Hides logout button" }
+            ]
+          }
+        },
+        {
+          "description": "A task status dropdown for ERP task management",
+          "output": {
+            "html_css": "<select id=\"taskStatus\" style=\"padding: 8px; border: 1px solid #bdc3c7; border-radius: 4px;\"><option value=\"pending\">Pending</option><option value=\"done\">Done</option></select>",
+            "javascript_suggestions": [
+              { "function_name": "updateStatus", "code": "function updateStatus() { const status = document.getElementById('taskStatus').value; console.log('Task status: ' + status); }", "description": "Logs selected status" },
+              { "function_name": "resetStatus", "code": "function resetStatus() { document.getElementById('taskStatus').value = 'pending'; }", "description": "Resets status to pending" }
+            ]
+          }
+        },
+        {
+          "description": "An ERP employee ID input field",
+          "output": {
+            "html_css": "<input id=\"empId\" type=\"text\" style=\"padding: 8px; border: 2px dotted #34495e; width: 150px;\" placeholder=\"Employee ID\">",
+            "javascript_suggestions": [
+              { "function_name": "validateId", "code": "function validateId() { const id = document.getElementById('empId').value; if(id.length !== 6) alert('ID must be 6 digits'); }", "description": "Validates employee ID length" },
+              { "function_name": "fetchEmployee", "code": "function fetchEmployee() { const id = document.getElementById('empId').value; console.log('Fetching data for ID: ' + id); }", "description": "Logs employee data fetch" }
+            ]
+          }
+        },
+        {
+          "description": "A product category filter button for e-commerce",
+          "output": {
+            "html_css": "<button id=\"filterBtn\" style=\"background-color: #8e44ad; color: white; padding: 10px; border: none; border-radius: 4px;\">Filter by Category</button>",
+            "javascript_suggestions": [
+              { "function_name": "applyFilter", "code": "function applyFilter() { document.getElementById('filterBtn').addEventListener('click', () => console.log('Filtering products')); }", "description": "Logs filter action" },
+              { "function_name": "toggleFilter", "code": "function toggleFilter() { document.getElementById('filterBtn').style.backgroundColor = '#9b59b6'; }", "description": "Changes button color on toggle" }
+            ]
+          }
+        },
+        {
+          "description": "A blog share button with icon styling",
+          "output": {
+            "html_css": "<button id=\"shareBtn\" style=\"background-color: #2ecc71; color: white; padding: 8px 12px; border: none; border-radius: 50px;\">Share</button>",
+            "javascript_suggestions": [
+              { "function_name": "sharePost", "code": "function sharePost() { document.getElementById('shareBtn').addEventListener('click', () => console.log('Post shared')); }", "description": "Logs share action" },
+              { "function_name": "animateShare", "code": "function animateShare() { document.getElementById('shareBtn').style.transform = 'scale(1.1)'; setTimeout(() => document.getElementById('shareBtn').style.transform = 'scale(1)', 200); }", "description": "Animates button on click" }
+            ]
+          }
+        },
+        
+            {
+              "description": "A product review star rating for e-commerce",
+              "output": {
+                "html_css": "<div id=\"rating\" style=\"font-size: 24px; color: #f1c40f;\">★★★★☆</div>",
+                "javascript_suggestions": [
+                  { "function_name": "updateRating", "code": "function updateRating(stars) { document.getElementById('rating').innerText = '★'.repeat(stars) + '☆'.repeat(5 - stars); }", "description": "Updates star rating dynamically" },
+                  { "function_name": "logRating", "code": "function logRating() { document.getElementById('rating').addEventListener('click', () => console.log('Rating clicked')); }", "description": "Logs rating interaction" }
+                ]
+              }
+            },
+            {
+              "description": "A blog post date display",
+              "output": {
+                "html_css": "<span id=\"postDate\" style=\"font-size: 14px; color: #7f8c8d; font-style: italic;\">March 13, 2025</span>",
+                "javascript_suggestions": [
+                  { "function_name": "updateDate", "code": "function updateDate() { document.getElementById('postDate').innerText = new Date().toLocaleDateString(); }", "description": "Updates to current date" },
+                  { "function_name": "highlightDate", "code": "function highlightDate() { document.getElementById('postDate').style.color = '#e74c3c'; }", "description": "Highlights date in red" }
+                ]
+              }
+            },
+            {
+              "description": "An ERP task priority toggle button",
+              "output": {
+                "html_css": "<button id=\"priorityBtn\" style=\"background-color: #e67e22; color: white; padding: 6px 12px; border: none; border-radius: 3px;\">High Priority</button>",
+                "javascript_suggestions": [
+                  { "function_name": "togglePriority", "code": "function togglePriority() { const btn = document.getElementById('priorityBtn'); btn.innerText = btn.innerText === 'High Priority' ? 'Low Priority' : 'High Priority'; btn.style.backgroundColor = btn.innerText === 'High Priority' ? '#e67e22' : '#95a5a6'; }", "description": "Toggles priority and color" },
+                  { "function_name": "logPriority", "code": "function logPriority() { document.getElementById('priorityBtn').addEventListener('click', () => console.log('Priority toggled')); }", "description": "Logs priority change" }
+                ]
+              }
+            },
+            {
+              "description": "A checkout total display for e-commerce",
+              "output": {
+                "html_css": "<div id=\"total\" style=\"font-size: 20px; font-weight: bold; color: #2ecc71; padding: 10px;\">Total: $99.99</div>",
+                "javascript_suggestions": [
+                  { "function_name": "updateTotal", "code": "function updateTotal(amount) { document.getElementById('total').innerText = `Total: $${amount.toFixed(2)}`; }", "description": "Updates total amount" },
+                  { "function_name": "flashTotal", "code": "function flashTotal() { document.getElementById('total').style.color = '#e74c3c'; setTimeout(() => document.getElementById('total').style.color = '#2ecc71', 500); }", "description": "Flashes total in red" }
+                ]
+              }
+            },
+            {
+              "description": "A blog category dropdown menu",
+              "output": {
+                "html_css": "<select id=\"blogCategory\" style=\"padding: 8px; border: 1px solid #3498db; border-radius: 4px; width: 150px;\"><option value=\"tech\">Tech</option><option value=\"lifestyle\">Lifestyle</option></select>",
+                "javascript_suggestions": [
+                  { "function_name": "filterPosts", "code": "function filterPosts() { const category = document.getElementById('blogCategory').value; console.log('Filtering by: ' + category); }", "description": "Logs selected category" },
+                  { "function_name": "resetCategory", "code": "function resetCategory() { document.getElementById('blogCategory').value = 'tech'; }", "description": "Resets to default category" }
+                ]
+              }
+            },
+            {
+              "description": "An ERP inventory stock alert",
+              "output": {
+                "html_css": "<div id=\"stockAlert\" style=\"background-color: #f39c12; color: white; padding: 10px; border-radius: 5px;\">Low Stock: 5 items</div>",
+                "javascript_suggestions": [
+                  { "function_name": "updateStock", "code": "function updateStock(count) { document.getElementById('stockAlert').innerText = `Low Stock: ${count} items`; }", "description": "Updates stock count" },
+                  { "function_name": "hideAlert", "code": "function hideAlert() { document.getElementById('stockAlert').style.display = 'none'; }", "description": "Hides stock alert" }
+                ]
+              }
+            },
+            {
+              "description": "A wishlist button for e-commerce",
+              "output": {
+                "html_css": "<button id=\"wishlistBtn\" style=\"background-color: #ecf0f1; color: #e74c3c; border: 2px solid #e74c3c; padding: 5px 10px; border-radius: 50%;\">♥</button>",
+                "javascript_suggestions": [
+                  { "function_name": "toggleWishlist", "code": "function toggleWishlist() { const btn = document.getElementById('wishlistBtn'); btn.style.backgroundColor = btn.style.backgroundColor === 'rgb(236, 240, 241)' ? '#e74c3c' : '#ecf0f1'; btn.style.color = btn.style.color === 'rgb(231, 76, 60)' ? '#fff' : '#e74c3c'; }", "description": "Toggles wishlist state" },
+                  { "function_name": "logWishlist", "code": "function logWishlist() { document.getElementById('wishlistBtn').addEventListener('click', () => console.log('Added to wishlist')); }", "description": "Logs wishlist action" }
+                ]
+              }
+            },
+            {
+              "description": "A blog read more link",
+              "output": {
+                "html_css": "<a id=\"readMore\" href=\"#\" style=\"color: #2980b9; text-decoration: none; font-weight: bold;\">Read More</a><style>#readMore:hover { text-decoration: underline; }</style>",
+                "javascript_suggestions": [
+                  { "function_name": "expandPost", "code": "function expandPost() { document.getElementById('readMore').addEventListener('click', (e) => { e.preventDefault(); console.log('Expanding post'); }); }", "description": "Logs post expansion" },
+                  { "function_name": "changeText", "code": "function changeText() { document.getElementById('readMore').innerText = 'Collapse'; }", "description": "Changes link text" }
+                ]
+              }
+            },
+            {
+              "description": "An ERP user role badge",
+              "output": {
+                "html_css": "<span id=\"roleBadge\" style=\"background-color: #2c3e50; color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px;\">Admin</span>",
+                "javascript_suggestions": [
+                  { "function_name": "updateRole", "code": "function updateRole(role) { document.getElementById('roleBadge').innerText = role; document.getElementById('roleBadge').style.backgroundColor = role === 'Admin' ? '#2c3e50' : '#16a085'; }", "description": "Updates role and color" },
+                  { "function_name": "hideBadge", "code": "function hideBadge() { document.getElementById('roleBadge').style.visibility = 'hidden'; }", "description": "Hides role badge" }
+                ]
+              }
+            },
+            {
+              "description": "A discount code input for e-commerce checkout",
+              "output": {
+                "html_css": "<input id=\"discountCode\" type=\"text\" style=\"padding: 8px; border: 2px dashed #9b59b6; width: 180px;\" placeholder=\"Enter discount code\">",
+                "javascript_suggestions": [
+                  { "function_name": "applyDiscount", "code": "function applyDiscount() { const code = document.getElementById('discountCode').value; console.log('Applying code: ' + code); }", "description": "Logs discount code application" },
+                  { "function_name": "clearCode", "code": "function clearCode() { document.getElementById('discountCode').value = ''; }", "description": "Clears discount code input" }
+                ]
+              }
+            },
+
+                {
+                  "description": "A product quantity selector for e-commerce",
+                  "output": {
+                    "html_css": "<input id=\"quantity\" type=\"number\" min=\"1\" style=\"width: 60px; padding: 5px; border: 1px solid #bdc3c7; border-radius: 4px;\" value=\"1\">",
+                    "javascript_suggestions": [
+                      { "function_name": "updateQuantity", "code": "function updateQuantity() { const qty = document.getElementById('quantity').value; console.log('Quantity set to: ' + qty); }", "description": "Logs quantity change" },
+                      { "function_name": "restrictMax", "code": "function restrictMax() { const qty = document.getElementById('quantity'); if(qty.value > 10) qty.value = 10; }", "description": "Limits quantity to 10" }
+                    ]
+                  }
+                },
+                {
+                  "description": "A blog post tag label",
+                  "output": {
+                    "html_css": "<span id=\"tagLabel\" style=\"background-color: #3498db; color: white; padding: 3px 8px; border-radius: 3px; font-size: 12px;\">Tutorial</span>",
+                    "javascript_suggestions": [
+                      { "function_name": "changeTag", "code": "function changeTag(newTag) { document.getElementById('tagLabel').innerText = newTag; }", "description": "Updates tag text" },
+                      { "function_name": "toggleTagColor", "code": "function toggleTagColor() { document.getElementById('tagLabel').style.backgroundColor = '#e74c3c'; }", "description": "Changes tag color" }
+                    ]
+                  }
+                },
+                {
+                  "description": "An ERP save button with loading state",
+                  "output": {
+                    "html_css": "<button id=\"saveBtn\" style=\"background-color: #27ae60; color: white; padding: 8px 16px; border: none; border-radius: 5px;\">Save</button>",
+                    "javascript_suggestions": [
+                      { "function_name": "saveData", "code": "function saveData() { document.getElementById('saveBtn').addEventListener('click', () => { document.getElementById('saveBtn').innerText = 'Saving...'; console.log('Data saved'); }); }", "description": "Simulates saving with loading text" },
+                      { "function_name": "resetSave", "code": "function resetSave() { document.getElementById('saveBtn').innerText = 'Save'; document.getElementById('saveBtn').disabled = false; }", "description": "Resets button to original state" }
+                    ]
+                  }
+                },
+                {
+                  "description": "A promotional popup close button for e-commerce",
+                  "output": {
+                    "html_css": "<button id=\"closePopup\" style=\"background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 50%; font-size: 14px;\">X</button>",
+                    "javascript_suggestions": [
+                      { "function_name": "closePopup", "code": "function closePopup() { document.getElementById('closePopup').addEventListener('click', () => console.log('Popup closed')); }", "description": "Logs popup closure" },
+                      { "function_name": "hidePopup", "code": "function hidePopup() { document.getElementById('closePopup').parentElement.style.display = 'none'; }", "description": "Hides parent popup element" }
+                    ]
+                  }
+                },
+                {
+                  "description": "A blog author bio link",
+                  "output": {
+                    "html_css": "<a id=\"authorLink\" href=\"#\" style=\"color: #8e44ad; text-decoration: none; font-size: 14px;\">By John Doe</a><style>#authorLink:hover { color: #9b59b6; }</style>",
+                    "javascript_suggestions": [
+                      { "function_name": "logAuthorClick", "code": "function logAuthorClick() { document.getElementById('authorLink').addEventListener('click', (e) => { e.preventDefault(); console.log('Author bio clicked'); }); }", "description": "Logs author link click" },
+                      { "function_name": "updateAuthor", "code": "function updateAuthor(name) { document.getElementById('authorLink').innerText = `By ${name}`; }", "description": "Updates author name" }
+                    ]
+                  }
+                },
+                {
+                  "description": "An ERP report download button",
+                  "output": {
+                    "html_css": "<button id=\"downloadBtn\" style=\"background-color: #16a085; color: white; padding: 10px 20px; border: none; border-radius: 4px;\">Download Report</button>",
+                    "javascript_suggestions": [
+                      { "function_name": "startDownload", "code": "function startDownload() { document.getElementById('downloadBtn').addEventListener('click', () => console.log('Downloading report')); }", "description": "Logs download initiation" },
+                      { "function_name": "disableDownload", "code": "function disableDownload() { document.getElementById('downloadBtn').disabled = true; document.getElementById('downloadBtn').innerText = 'Downloading...'; }", "description": "Disables button during download" }
+                    ]
+                  }
+                },
+                {
+                  "description": "A shipping option radio button for e-commerce",
+                  "output": {
+                    "html_css": "<input id=\"shipping\" type=\"radio\" name=\"shipping\" style=\"margin-right: 5px;\"><label for=\"shipping\" style=\"font-size: 14px;\">Standard Shipping</label>",
+                    "javascript_suggestions": [
+                      { "function_name": "selectShipping", "code": "function selectShipping() { document.getElementById('shipping').addEventListener('change', () => console.log('Shipping selected')); }", "description": "Logs shipping selection" },
+                      { "function_name": "checkShipping", "code": "function checkShipping() { document.getElementById('shipping').checked = true; }", "description": "Programmatically checks radio button" }
+                    ]
+                  }
+                },
+                {
+                  "description": "A blog social media share counter",
+                  "output": {
+                    "html_css": "<span id=\"shareCount\" style=\"font-size: 16px; color: #7f8c8d; padding: 5px;\">Shares: 42</span>",
+                    "javascript_suggestions": [
+                      { "function_name": "incrementShares", "code": "function incrementShares() { let count = parseInt(document.getElementById('shareCount').innerText.split(': ')[1]); document.getElementById('shareCount').innerText = `Shares: ${count + 1}`; }", "description": "Increments share count" },
+                      { "function_name": "resetShares", "code": "function resetShares() { document.getElementById('shareCount').innerText = 'Shares: 0'; }", "description": "Resets share count" }
+                    ]
+                  }
+                },
+                {
+                  "description": "An ERP notification bell icon",
+                  "output": {
+                    "html_css": "<div id=\"notifBell\" style=\"font-size: 20px; color: #f1c40f; cursor: pointer;\">🔔</div>",
+                    "javascript_suggestions": [
+                      { "function_name": "showNotifications", "code": "function showNotifications() { document.getElementById('notifBell').addEventListener('click', () => console.log('Notifications opened')); }", "description": "Logs notification view" },
+                      { "function_name": "markRead", "code": "function markRead() { document.getElementById('notifBell').style.color = '#95a5a6'; }", "description": "Changes color to indicate read" }
+                    ]
+                  }
+                },
+                {
+                  "description": "A product filter reset button for e-commerce",
+                  "output": {
+                    "html_css": "<button id=\"resetFilter\" style=\"background-color: #ecf0f1; color: #7f8c8d; border: 1px solid #bdc3c7; padding: 6px 12px; border-radius: 4px;\">Reset Filters</button>",
+                    "javascript_suggestions": [
+                      { "function_name": "resetFilters", "code": "function resetFilters() { document.getElementById('resetFilter').addEventListener('click', () => console.log('Filters reset')); }", "description": "Logs filter reset" },
+                      { "function_name": "highlightReset", "code": "function highlightReset() { document.getElementById('resetFilter').style.backgroundColor = '#bdc3c7'; setTimeout(() => document.getElementById('resetFilter').style.backgroundColor = '#ecf0f1', 200); }", "description": "Highlights button briefly" }
+                    ]
+                  }
+                },
+              
+
+                    {
+                      "description": "A product availability status for e-commerce",
+                      "output": {
+                        "html_css": "<span id=\"availability\" style=\"font-size: 14px; color: #27ae60; font-weight: bold;\">In Stock</span>",
+                        "javascript_suggestions": [
+                          { "function_name": "updateAvailability", "code": "function updateAvailability(status) { const avail = document.getElementById('availability'); avail.innerText = status; avail.style.color = status === 'In Stock' ? '#27ae60' : '#e74c3c'; }", "description": "Updates availability status and color" },
+                          { "function_name": "checkStock", "code": "function checkStock() { console.log('Stock status: ' + document.getElementById('availability').innerText); }", "description": "Logs current stock status" }
+                        ]
+                      }
+                    },
+                    {
+                      "description": "A blog post excerpt toggle button",
+                      "output": {
+                        "html_css": "<button id=\"excerptBtn\" style=\"background-color: #2980b9; color: white; padding: 6px 12px; border: none; border-radius: 3px;\">Show Excerpt</button>",
+                        "javascript_suggestions": [
+                          { "function_name": "toggleExcerpt", "code": "function toggleExcerpt() { const btn = document.getElementById('excerptBtn'); btn.innerText = btn.innerText === 'Show Excerpt' ? 'Hide Excerpt' : 'Show Excerpt'; console.log(btn.innerText); }", "description": "Toggles excerpt visibility and logs state" },
+                          { "function_name": "disableToggle", "code": "function disableToggle() { document.getElementById('excerptBtn').disabled = true; }", "description": "Disables toggle button" }
+                        ]
+                      }
+                    },
+                    {
+                      "description": "An ERP user search input",
+                      "output": {
+                        "html_css": "<input id=\"userSearch\" type=\"text\" style=\"padding: 8px; border: 1px solid #34495e; width: 200px; border-radius: 4px;\" placeholder=\"Search users...\">",
+                        "javascript_suggestions": [
+                          { "function_name": "searchUsers", "code": "function searchUsers() { const query = document.getElementById('userSearch').value; console.log('Searching users: ' + query); }", "description": "Logs user search query" },
+                          { "function_name": "clearSearch", "code": "function clearSearch() { document.getElementById('userSearch').value = ''; }", "description": "Clears search input" }
+                        ]
+                      }
+                    },
+                    {
+                      "description": "A cart item remove button for e-commerce",
+                      "output": {
+                        "html_css": "<button id=\"removeItem\" style=\"background-color: #c0392b; color: white; padding: 4px 8px; border: none; border-radius: 50%; font-size: 12px;\">X</button>",
+                        "javascript_suggestions": [
+                          { "function_name": "removeFromCart", "code": "function removeFromCart() { document.getElementById('removeItem').addEventListener('click', () => console.log('Item removed from cart')); }", "description": "Logs item removal" },
+                          { "function_name": "hideButton", "code": "function hideButton() { document.getElementById('removeItem').style.display = 'none'; }", "description": "Hides remove button" }
+                        ]
+                      }
+                    },
+                    {
+                      "description": "A blog featured image placeholder",
+                      "output": {
+                        "html_css": "<div id=\"featuredImg\" style=\"width: 300px; height: 200px; background-color: #ecf0f1; border: 2px solid #bdc3c7; text-align: center; line-height: 200px;\">Featured Image</div>",
+                        "javascript_suggestions": [
+                          { "function_name": "loadImage", "code": "function loadImage(url) { document.getElementById('featuredImg').style.backgroundImage = `url(${url})`; document.getElementById('featuredImg').innerText = ''; }", "description": "Loads image into placeholder" },
+                          { "function_name": "resetImage", "code": "function resetImage() { document.getElementById('featuredImg').style.backgroundImage = ''; document.getElementById('featuredImg').innerText = 'Featured Image'; }", "description": "Resets to placeholder" }
+                        ]
+                      }
+                    },
+                    {
+                      "description": "An ERP task deadline picker",
+                      "output": {
+                        "html_css": "<input id=\"deadline\" type=\"date\" style=\"padding: 6px; border: 1px solid #16a085; border-radius: 4px;\">",
+                        "javascript_suggestions": [
+                          { "function_name": "setDeadline", "code": "function setDeadline() { const date = document.getElementById('deadline').value; console.log('Deadline set to: ' + date); }", "description": "Logs selected deadline" },
+                          { "function_name": "defaultToday", "code": "function defaultToday() { document.getElementById('deadline').value = new Date().toISOString().split('T')[0]; }", "description": "Sets default to today’s date" }
+                        ]
+                      }
+                    },
+                    {
+                      "description": "A product comparison checkbox for e-commerce",
+                      "output": {
+                        "html_css": "<input id=\"compare\" type=\"checkbox\" style=\"margin-right: 5px;\"><label for=\"compare\" style=\"font-size: 14px;\">Add to Compare</label>",
+                        "javascript_suggestions": [
+                          { "function_name": "toggleCompare", "code": "function toggleCompare() { const checked = document.getElementById('compare').checked; console.log('Compare: ' + checked); }", "description": "Logs comparison state" },
+                          { "function_name": "resetCompare", "code": "function resetCompare() { document.getElementById('compare').checked = false; }", "description": "Unchecks comparison box" }
+                        ]
+                      }
+                    },
+                    {
+                      "description": "A blog newsletter signup button",
+                      "output": {
+                        "html_css": "<button id=\"signupBtn\" style=\"background-color: #f1c40f; color: #2c3e50; padding: 10px 20px; border: none; border-radius: 5px;\">Join Newsletter</button>",
+                        "javascript_suggestions": [
+                          { "function_name": "signup", "code": "function signup() { document.getElementById('signupBtn').addEventListener('click', () => console.log('Newsletter signup')); }", "description": "Logs signup action" },
+                          { "function_name": "changeText", "code": "function changeText() { document.getElementById('signupBtn').innerText = 'Subscribed!'; }", "description": "Updates button text" }
+                        ]
+                      }
+                    },
+                    {
+                      "description": "An ERP data export format selector",
+                      "output": {
+                        "html_css": "<select id=\"exportFormat\" style=\"padding: 8px; border: 2px solid #8e44ad; border-radius: 4px;\"><option value=\"csv\">CSV</option><option value=\"pdf\">PDF</option></select>",
+                        "javascript_suggestions": [
+                          { "function_name": "selectFormat", "code": "function selectFormat() { const format = document.getElementById('exportFormat').value; console.log('Export format: ' + format); }", "description": "Logs selected format" },
+                          { "function_name": "defaultCSV", "code": "function defaultCSV() { document.getElementById('exportFormat').value = 'csv'; }", "description": "Sets default to CSV" }
+                        ]
+                      }
+                    },
+                    {
+                      "description": "A sale banner for e-commerce homepage",
+                      "output": {
+                        "html_css": "<div id=\"saleBanner\" style=\"background-color: #e67e22; color: white; padding: 15px; text-align: center; font-weight: bold;\">20% Off Today!</div>",
+                        "javascript_suggestions": [
+                          { "function_name": "updateSale", "code": "function updateSale(discount) { document.getElementById('saleBanner').innerText = `${discount}% Off Today!`; }", "description": "Updates discount percentage" },
+                          { "function_name": "hideBanner", "code": "function hideBanner() { document.getElementById('saleBanner').style.display = 'none'; }", "description": "Hides sale banner" }
+                        ]
+                      }
+                    },
+                        {
+                          "description": "A product review submission button for e-commerce",
+                          "output": {
+                            "html_css": "<button id=\"submitReview\" style=\"background-color: #2ecc71; color: white; padding: 8px 16px; border: none; border-radius: 4px;\">Submit Review</button>",
+                            "javascript_suggestions": [
+                              { "function_name": "submitReview", "code": "function submitReview() { document.getElementById('submitReview').addEventListener('click', () => console.log('Review submitted')); }", "description": "Logs review submission" },
+                              { "function_name": "disableSubmit", "code": "function disableSubmit() { document.getElementById('submitReview').disabled = true; document.getElementById('submitReview').innerText = 'Submitted'; }", "description": "Disables button and updates text" }
+                            ]
+                          }
+                        },
+                        {
+                          "description": "A blog post like button",
+                          "output": {
+                            "html_css": "<button id=\"likeBtn\" style=\"background-color: #ecf0f1; color: #e74c3c; border: 1px solid #e74c3c; padding: 5px 10px; border-radius: 50px;\">♥ 0</button>",
+                            "javascript_suggestions": [
+                              { "function_name": "incrementLike", "code": "function incrementLike() { const btn = document.getElementById('likeBtn'); let count = parseInt(btn.innerText.split(' ')[1]); btn.innerText = `♥ ${count + 1}`; }", "description": "Increments like count" },
+                              { "function_name": "toggleLikeColor", "code": "function toggleLikeColor() { document.getElementById('likeBtn').style.backgroundColor = '#e74c3c'; document.getElementById('likeBtn').style.color = '#fff'; }", "description": "Changes button color on like" }
+                            ]
+                          }
+                        },
+                        {
+                          "description": "An ERP project status indicator",
+                          "output": {
+                            "html_css": "<div id=\"projectStatus\" style=\"background-color: #f1c40f; color: white; padding: 5px 10px; border-radius: 12px; font-size: 12px;\">In Progress</div>",
+                            "javascript_suggestions": [
+                              { "function_name": "updateStatus", "code": "function updateStatus(status) { const stat = document.getElementById('projectStatus'); stat.innerText = status; stat.style.backgroundColor = status === 'In Progress' ? '#f1c40f' : '#27ae60'; }", "description": "Updates status and color" },
+                              { "function_name": "logStatus", "code": "function logStatus() { console.log('Current status: ' + document.getElementById('projectStatus').innerText); }", "description": "Logs current status" }
+                            ]
+                          }
+                        },
+                        {
+                          "description": "A wishlist counter for e-commerce",
+                          "output": {
+                            "html_css": "<span id=\"wishlistCount\" style=\"font-size: 16px; color: #8e44ad; font-weight: bold;\">Wishlist: 3</span>",
+                            "javascript_suggestions": [
+                              { "function_name": "updateWishlistCount", "code": "function updateWishlistCount(count) { document.getElementById('wishlistCount').innerText = `Wishlist: ${count}`; }", "description": "Updates wishlist count" },
+                              { "function_name": "resetWishlist", "code": "function resetWishlist() { document.getElementById('wishlistCount').innerText = 'Wishlist: 0'; }", "description": "Resets wishlist count" }
+                            ]
+                          }
+                        },
+                        {
+                          "description": "A blog comment reply link",
+                          "output": {
+                            "html_css": "<a id=\"replyLink\" href=\"#\" style=\"color: #3498db; text-decoration: none; font-size: 14px;\">Reply</a><style>#replyLink:hover { text-decoration: underline; }</style>",
+                            "javascript_suggestions": [
+                              { "function_name": "openReply", "code": "function openReply() { document.getElementById('replyLink').addEventListener('click', (e) => { e.preventDefault(); console.log('Reply clicked'); }); }", "description": "Logs reply action" },
+                              { "function_name": "hideReply", "code": "function hideReply() { document.getElementById('replyLink').style.display = 'none'; }", "description": "Hides reply link" }
+                            ]
+                          }
+                        },
+                        {
+                          "description": "An ERP employee status toggle switch",
+                          "output": {
+                            "html_css": "<input id=\"empStatus\" type=\"checkbox\" style=\"display: none;\"><label for=\"empStatus\" style=\"background-color: #95a5a6; padding: 5px 10px; border-radius: 15px; color: white; cursor: pointer;\">Inactive</label><style>#empStatus:checked + label { background-color: #2ecc71; content: 'Active'; }</style>",
+                            "javascript_suggestions": [
+                              { "function_name": "toggleStatus", "code": "function toggleStatus() { const chk = document.getElementById('empStatus'); chk.checked = !chk.checked; document.querySelector('label[for=empStatus]').innerText = chk.checked ? 'Active' : 'Inactive'; }", "description": "Toggles employee status" },
+                              { "function_name": "logStatus", "code": "function logStatus() { const status = document.getElementById('empStatus').checked ? 'Active' : 'Inactive'; console.log('Employee status: ' + status); }", "description": "Logs current status" }
+                            ]
+                          }
+                        },
+                        {
+                          "description": "A product size selector for e-commerce",
+                          "output": {
+                            "html_css": "<select id=\"sizeSelect\" style=\"padding: 6px; border: 1px solid #e67e22; border-radius: 4px;\"><option value=\"S\">Small</option><option value=\"M\">Medium</option><option value=\"L\">Large</option></select>",
+                            "javascript_suggestions": [
+                              { "function_name": "selectSize", "code": "function selectSize() { const size = document.getElementById('sizeSelect').value; console.log('Size selected: ' + size); }", "description": "Logs selected size" },
+                              { "function_name": "defaultSize", "code": "function defaultSize() { document.getElementById('sizeSelect').value = 'M'; }", "description": "Sets default size to Medium" }
+                            ]
+                          }
+                        },
+                        {
+                          "description": "A blog pagination next button",
+                          "output": {
+                            "html_css": "<button id=\"nextPage\" style=\"background-color: #16a085; color: white; padding: 8px 12px; border: none; border-radius: 3px;\">Next</button>",
+                            "javascript_suggestions": [
+                              { "function_name": "goNext", "code": "function goNext() { document.getElementById('nextPage').addEventListener('click', () => console.log('Next page')); }", "description": "Logs navigation to next page" },
+                              { "function_name": "disableNext", "code": "function disableNext() { document.getElementById('nextPage').disabled = true; document.getElementById('nextPage').style.opacity = '0.5'; }", "description": "Disables next button" }
+                            ]
+                          }
+                        },
+                        {
+                          "description": "An ERP task assignment dropdown",
+                          "output": {
+                            "html_css": "<select id=\"assignTask\" style=\"padding: 8px; border: 2px solid #2980b9; border-radius: 4px; width: 150px;\"><option value=\"user1\">User 1</option><option value=\"user2\">User 2</option></select>",
+                            "javascript_suggestions": [
+                              { "function_name": "assignUser", "code": "function assignUser() { const user = document.getElementById('assignTask').value; console.log('Task assigned to: ' + user); }", "description": "Logs task assignment" },
+                              { "function_name": "resetAssignment", "code": "function resetAssignment() { document.getElementById('assignTask').value = 'user1'; }", "description": "Resets to default user" }
+                            ]
+                          }
+                        },
+                        {
+                          "description": "A limited stock alert for e-commerce",
+                          "output": {
+                            "html_css": "<div id=\"stockWarning\" style=\"background-color: #e74c3c; color: white; padding: 10px; border-radius: 5px; font-size: 14px;\">Only 2 left!</div>",
+                            "javascript_suggestions": [
+                              { "function_name": "updateStockWarning", "code": "function updateStockWarning(count) { document.getElementById('stockWarning').innerText = `Only ${count} left!`; }", "description": "Updates stock warning count" },
+                              { "function_name": "hideWarning", "code": "function hideWarning() { document.getElementById('stockWarning').style.display = 'none'; }", "description": "Hides stock warning" }
+                            ]
+                          }
+                        },
+          
+                            {
+                              "description": "A product quick view button for e-commerce",
+                              "output": {
+                                "html_css": "<button id=\"quickView\" style=\"background-color: #3498db; color: white; padding: 6px 12px; border: none; border-radius: 3px;\">Quick View</button>",
+                                "javascript_suggestions": [
+                                  { "function_name": "showQuickView", "code": "function showQuickView() { document.getElementById('quickView').addEventListener('click', () => console.log('Quick view opened')); }", "description": "Logs quick view action" },
+                                  { "function_name": "highlightButton", "code": "function highlightButton() { document.getElementById('quickView').style.backgroundColor = '#2980b9'; setTimeout(() => document.getElementById('quickView').style.backgroundColor = '#3498db', 200); }", "description": "Briefly highlights button" }
+                                ]
+                              }
+                            },
+                            {
+                              "description": "A blog post category badge",
+                              "output": {
+                                "html_css": "<span id=\"categoryBadge\" style=\"background-color: #e67e22; color: white; padding: 4px 8px; border-radius: 10px; font-size: 12px;\">News</span>",
+                                "javascript_suggestions": [
+                                  { "function_name": "updateCategory", "code": "function updateCategory(cat) { document.getElementById('categoryBadge').innerText = cat; }", "description": "Updates category text" },
+                                  { "function_name": "changeBadgeColor", "code": "function changeBadgeColor() { document.getElementById('categoryBadge').style.backgroundColor = '#d35400'; }", "description": "Changes badge color" }
+                                ]
+                              }
+                            },
+                            {
+                              "description": "An ERP overdue task alert",
+                              "output": {
+                                "html_css": "<div id=\"overdueAlert\" style=\"background-color: #c0392b; color: white; padding: 8px; border-radius: 4px; font-size: 14px;\">Task Overdue!</div>",
+                                "javascript_suggestions": [
+                                  { "function_name": "updateAlert", "code": "function updateAlert(text) { document.getElementById('overdueAlert').innerText = text; }", "description": "Updates alert message" },
+                                  { "function_name": "dismissAlert", "code": "function dismissAlert() { document.getElementById('overdueAlert').style.display = 'none'; }", "description": "Hides overdue alert" }
+                                ]
+                              }
+                            },
+                            {
+                              "description": "A checkout proceed button for e-commerce",
+                              "output": {
+                                "html_css": "<button id=\"proceedCheckout\" style=\"background-color: #27ae60; color: white; padding: 10px 20px; border: none; border-radius: 5px;\">Proceed to Checkout</button>",
+                                "javascript_suggestions": [
+                                  { "function_name": "goToCheckout", "code": "function goToCheckout() { document.getElementById('proceedCheckout').addEventListener('click', () => console.log('Proceeding to checkout')); }", "description": "Logs checkout action" },
+                                  { "function_name": "disableProceed", "code": "function disableProceed() { document.getElementById('proceedCheckout').disabled = true; document.getElementById('proceedCheckout').innerText = 'Processing...'; }", "description": "Disables button during processing" }
+                                ]
+                              }
+                            },
+                            {
+                              "description": "A blog search filter input",
+                              "output": {
+                                "html_css": "<input id=\"blogSearch\" type=\"text\" style=\"padding: 8px; border: 2px solid #16a085; width: 220px; border-radius: 4px;\" placeholder=\"Search posts...\">",
+                                "javascript_suggestions": [
+                                  { "function_name": "filterPosts", "code": "function filterPosts() { const query = document.getElementById('blogSearch').value; console.log('Filtering posts: ' + query); }", "description": "Logs search query" },
+                                  { "function_name": "clearFilter", "code": "function clearFilter() { document.getElementById('blogSearch').value = ''; }", "description": "Clears search input" }
+                                ]
+                              }
+                            },
+                            {
+                              "description": "An ERP team member avatar",
+                              "output": {
+                                "html_css": "<div id=\"teamAvatar\" style=\"width: 40px; height: 40px; background-color: #8e44ad; color: white; border-radius: 50%; text-align: center; line-height: 40px; font-size: 16px;\">JD</div>",
+                                "javascript_suggestions": [
+                                  { "function_name": "updateAvatar", "code": "function updateAvatar(initials) { document.getElementById('teamAvatar').innerText = initials; }", "description": "Updates avatar initials" },
+                                  { "function_name": "changeAvatarColor", "code": "function changeAvatarColor() { document.getElementById('teamAvatar').style.backgroundColor = '#9b59b6'; }", "description": "Changes avatar color" }
+                                ]
+                              }
+                            },
+                            {
+                              "description": "A product color picker for e-commerce",
+                              "output": {
+                                "html_css": "<input id=\"colorPicker\" type=\"color\" style=\"width: 50px; height: 50px; border: none; border-radius: 5px; padding: 0;\" value=\"#ff0000\">",
+                                "javascript_suggestions": [
+                                  { "function_name": "selectColor", "code": "function selectColor() { const color = document.getElementById('colorPicker').value; console.log('Color selected: ' + color); }", "description": "Logs selected color" },
+                                  { "function_name": "resetColor", "code": "function resetColor() { document.getElementById('colorPicker').value = '#ff0000'; }", "description": "Resets to default red" }
+                                ]
+                              }
+                            },
+                            {
+                              "description": "A blog archive link",
+                              "output": {
+                                "html_css": "<a id=\"archiveLink\" href=\"#\" style=\"color: #2c3e50; text-decoration: none; font-size: 14px;\">View Archive</a><style>#archiveLink:hover { color: #34495e; }</style>",
+                                "javascript_suggestions": [
+                                  { "function_name": "goToArchive", "code": "function goToArchive() { document.getElementById('archiveLink').addEventListener('click', (e) => { e.preventDefault(); console.log('Archive viewed'); }); }", "description": "Logs archive navigation" },
+                                  { "function_name": "updateLinkText", "code": "function updateLinkText() { document.getElementById('archiveLink').innerText = 'Back to Posts'; }", "description": "Updates link text" }
+                                ]
+                              }
+                            },
+                            {
+                              "description": "An ERP progress bar for task completion",
+                              "output": {
+                                "html_css": "<div id=\"progressBar\" style=\"width: 200px; height: 20px; background-color: #ecf0f1; border-radius: 10px;\"><div style=\"width: 50%; height: 100%; background-color: #3498db; border-radius: 10px;\"></div></div>",
+                                "javascript_suggestions": [
+                                  { "function_name": "updateProgress", "code": "function updateProgress(percent) { document.getElementById('progressBar').children[0].style.width = `${percent}%`; }", "description": "Updates progress bar width" },
+                                  { "function_name": "resetProgress", "code": "function resetProgress() { document.getElementById('progressBar').children[0].style.width = '0%'; }", "description": "Resets progress to 0%" }
+                                ]
+                              }
+                            },
+                            {
+                              "description": "A featured product label for e-commerce",
+                              "output": {
+                                "html_css": "<span id=\"featuredLabel\" style=\"background-color: #f1c40f; color: #2c3e50; padding: 5px 10px; border-radius: 3px; font-weight: bold;\">Featured</span>",
+                                "javascript_suggestions": [
+                                  { "function_name": "toggleFeatured", "code": "function toggleFeatured() { const label = document.getElementById('featuredLabel'); label.innerText = label.innerText === 'Featured' ? 'Standard' : 'Featured'; label.style.backgroundColor = label.innerText === 'Featured' ? '#f1c40f' : '#95a5a6'; }", "description": "Toggles featured status" },
+                                  { "function_name": "hideLabel", "code": "function hideLabel() { document.getElementById('featuredLabel').style.display = 'none'; }", "description": "Hides featured label" }
+                                ]
+                              }
+                            },
+                     
+                                {
+                                  "description": "A product sorting dropdown for e-commerce",
+                                  "output": {
+                                    "html_css": "<select id=\"sortProducts\" style=\"padding: 8px; border: 1px solid #2ecc71; border-radius: 4px; width: 150px;\"><option value=\"price-low\">Price: Low to High</option><option value=\"price-high\">Price: High to Low</option></select>",
+                                    "javascript_suggestions": [
+                                      { "function_name": "sortProducts", "code": "function sortProducts() { const sort = document.getElementById('sortProducts').value; console.log('Sorting by: ' + sort); }", "description": "Logs sorting preference" },
+                                      { "function_name": "resetSort", "code": "function resetSort() { document.getElementById('sortProducts').value = 'price-low'; }", "description": "Resets to default sort" }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "description": "A blog post view counter",
+                                  "output": {
+                                    "html_css": "<span id=\"viewCount\" style=\"font-size: 14px; color: #7f8c8d; padding: 5px;\">Views: 150</span>",
+                                    "javascript_suggestions": [
+                                      { "function_name": "incrementViews", "code": "function incrementViews() { let count = parseInt(document.getElementById('viewCount').innerText.split(': ')[1]); document.getElementById('viewCount').innerText = `Views: ${count + 1}`; }", "description": "Increments view count" },
+                                      { "function_name": "resetViews", "code": "function resetViews() { document.getElementById('viewCount').innerText = 'Views: 0'; }", "description": "Resets view count" }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "description": "An ERP calendar event button",
+                                  "output": {
+                                    "html_css": "<button id=\"eventBtn\" style=\"background-color: #e67e22; color: white; padding: 6px 12px; border: none; border-radius: 3px;\">Add Event</button>",
+                                    "javascript_suggestions": [
+                                      { "function_name": "addEvent", "code": "function addEvent() { document.getElementById('eventBtn').addEventListener('click', () => console.log('Event added')); }", "description": "Logs event addition" },
+                                      { "function_name": "disableEvent", "code": "function disableEvent() { document.getElementById('eventBtn').disabled = true; document.getElementById('eventBtn').innerText = 'Added'; }", "description": "Disables button and updates text" }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "description": "A cart subtotal display for e-commerce",
+                                  "output": {
+                                    "html_css": "<div id=\"subtotal\" style=\"font-size: 18px; color: #34495e; font-weight: bold; padding: 10px;\">Subtotal: $45.00</div>",
+                                    "javascript_suggestions": [
+                                      { "function_name": "updateSubtotal", "code": "function updateSubtotal(amount) { document.getElementById('subtotal').innerText = `Subtotal: $${amount.toFixed(2)}`; }", "description": "Updates subtotal amount" },
+                                      { "function_name": "highlightSubtotal", "code": "function highlightSubtotal() { document.getElementById('subtotal').style.color = '#e74c3c'; setTimeout(() => document.getElementById('subtotal').style.color = '#34495e', 500); }", "description": "Highlights subtotal briefly" }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "description": "A blog tag filter button",
+                                  "output": {
+                                    "html_css": "<button id=\"tagFilter\" style=\"background-color: #2980b9; color: white; padding: 6px 12px; border: none; border-radius: 4px;\">Filter by Tag</button>",
+                                    "javascript_suggestions": [
+                                      { "function_name": "applyTagFilter", "code": "function applyTagFilter() { document.getElementById('tagFilter').addEventListener('click', () => console.log('Filtering by tag')); }", "description": "Logs tag filter action" },
+                                      { "function_name": "toggleFilterState", "code": "function toggleFilterState() { document.getElementById('tagFilter').style.backgroundColor = '#3498db'; }", "description": "Changes button color on toggle" }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "description": "An ERP department selector",
+                                  "output": {
+                                    "html_css": "<select id=\"deptSelect\" style=\"padding: 8px; border: 2px solid #f1c40f; border-radius: 4px; width: 160px;\"><option value=\"sales\">Sales</option><option value=\"hr\">HR</option></select>",
+                                    "javascript_suggestions": [
+                                      { "function_name": "selectDept", "code": "function selectDept() { const dept = document.getElementById('deptSelect').value; console.log('Department selected: ' + dept); }", "description": "Logs selected department" },
+                                      { "function_name": "defaultDept", "code": "function defaultDept() { document.getElementById('deptSelect').value = 'sales'; }", "description": "Sets default to Sales" }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "description": "A product stock input for e-commerce",
+                                  "output": {
+                                    "html_css": "<input id=\"stockInput\" type=\"number\" min=\"0\" style=\"width: 80px; padding: 6px; border: 1px solid #e74c3c; border-radius: 4px;\" value=\"10\">",
+                                    "javascript_suggestions": [
+                                      { "function_name": "updateStock", "code": "function updateStock() { const stock = document.getElementById('stockInput').value; console.log('Stock updated to: ' + stock); }", "description": "Logs stock update" },
+                                      { "function_name": "restrictStock", "code": "function restrictStock() { const stock = document.getElementById('stockInput'); if(stock.value < 0) stock.value = 0; }", "description": "Prevents negative stock" }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "description": "A blog subscription confirmation popup",
+                                  "output": {
+                                    "html_css": "<div id=\"subConfirm\" style=\"background-color: #2ecc71; color: white; padding: 10px; border-radius: 5px; text-align: center;\">Subscribed!</div>",
+                                    "javascript_suggestions": [
+                                      { "function_name": "showConfirmation", "code": "function showConfirmation() { document.getElementById('subConfirm').style.display = 'block'; }", "description": "Shows confirmation popup" },
+                                      { "function_name": "hideConfirmation", "code": "function hideConfirmation() { document.getElementById('subConfirm').style.display = 'none'; }", "description": "Hides confirmation popup" }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "description": "An ERP user permission toggle",
+                                  "output": {
+                                    "html_css": "<input id=\"permToggle\" type=\"checkbox\" style=\"margin-right: 5px;\"><label for=\"permToggle\" style=\"font-size: 14px;\">Edit Access</label>",
+                                    "javascript_suggestions": [
+                                      { "function_name": "togglePermission", "code": "function togglePermission() { const perm = document.getElementById('permToggle').checked; console.log('Edit access: ' + perm); }", "description": "Logs permission state" },
+                                      { "function_name": "resetPermission", "code": "function resetPermission() { document.getElementById('permToggle').checked = false; }", "description": "Resets permission to off" }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "description": "A product rating filter for e-commerce",
+                                  "output": {
+                                    "html_css": "<input id=\"ratingFilter\" type=\"range\" min=\"1\" max=\"5\" style=\"width: 150px;\" value=\"3\">",
+                                    "javascript_suggestions": [
+                                      { "function_name": "filterByRating", "code": "function filterByRating() { const rating = document.getElementById('ratingFilter').value; console.log('Filtering by rating: ' + rating); }", "description": "Logs rating filter value" },
+                                      { "function_name": "resetRating", "code": "function resetRating() { document.getElementById('ratingFilter').value = '3'; }", "description": "Resets rating to default" }
+                                    ]
+                                  }
+                                }
+                              
+                          
+                  
+  ]
