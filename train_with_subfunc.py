@@ -167,7 +167,7 @@ if __name__ == "__main__":
     parser.add_argument('--cache-data', default='cache_data/T5-40epoch_subfunc', type=str)
     parser.add_argument('--cache-dir', default='huggingface_cache', type=str)
     parser.add_argument('--load', default='Salesforce/codet5p-220m', type=str)
-    parser.add_argument('--json-data', default='./dataset_subfunction.json.json', type=str, help='Path to the JSON dataset file')
+    parser.add_argument('--json-data', default='./dataset_subfunction.json', type=str, help='Path to the JSON dataset file')
     parser.add_argument('--epochs', default=40, type=int)
     parser.add_argument('--lr', default=5e-5, type=float)
     parser.add_argument('--lr-warmup-steps', default=50, type=int)
