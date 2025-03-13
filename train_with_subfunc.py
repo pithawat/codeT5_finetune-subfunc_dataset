@@ -164,7 +164,7 @@ if __name__ == "__main__":
     parser.add_argument('--data-num', default=-1, type=int)
     parser.add_argument('--max-source-len', default=50, type=int)
     parser.add_argument('--max-target-len', default=520, type=int)  # Increase if needed for longer JS
-    parser.add_argument('--cache-data', default='cache_data/T5-40epoch', type=str)
+    parser.add_argument('--cache-data', default='cache_data/T5-40epoch_subfunc', type=str)
     parser.add_argument('--cache-dir', default='huggingface_cache', type=str)
     parser.add_argument('--load', default='Salesforce/codet5p-220m', type=str)
     parser.add_argument('--json-data', default='./dataset_subfunction.json.json', type=str, help='Path to the JSON dataset file')
@@ -176,8 +176,8 @@ if __name__ == "__main__":
     parser.add_argument('--local_rank', default=-1, type=int)
     parser.add_argument('--deepspeed', default=None, type=str)
     parser.add_argument('--fp16', action='store_true')
-    parser.add_argument('--save-dir', default="saved_models/T5-40epoch", type=str)
-    parser.add_argument('--logging-dir', default="saved_models/T5-40epoch/logs", type=str)
+    parser.add_argument('--save-dir', default="saved_models/T5-40epoch_subfunc", type=str)
+    parser.add_argument('--logging-dir', default="saved_models/T5-40epoch_subfunc/logs", type=str)
     parser.add_argument('--log-freq', default=10, type=int)
     parser.add_argument('--save-freq', default=500, type=int)
 
